@@ -1,0 +1,30 @@
+# .NET
+**/bin/
+**/obj/
+
+# User-specific files
+*.user
+*.suo
+.vs/
+
+# Visual Studio Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+dist/
+build/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local database / secrets
+appsettings.Local.json
+
+# Logs
+*.log
