@@ -17,5 +17,7 @@ public class PPWovenDbContext : DbContext
     public DbSet<Shift> Shifts => Set<Shift>();
     public DbSet<SalesOrder> SalesOrders => Set<SalesOrder>();
     public DbSet<SalesOrderItem> SalesOrderItems => Set<SalesOrderItem>();
+    public DbSet<ProductionOrder> ProductionOrders => Set<ProductionOrder>();
+    public DbSet<ProductionOperation> ProductionOperations => Set<ProductionOperation>();
 
 }
