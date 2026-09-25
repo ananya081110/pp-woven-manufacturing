@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PPWoven.Infrastructure.Data;
@@ -11,9 +12,11 @@ using PPWoven.Infrastructure.Data;
 namespace PPWoven.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(PPWovenDbContext))]
-    partial class PPWovenDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260925125035_AddEmployees")]
+    partial class AddEmployees
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -194,42 +197,6 @@ namespace PPWoven.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Machines");
-                });
-
-            modelBuilder.Entity("PPWoven.Domain.Entities.Shift", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<TimeSpan>("EndTime")
-                        .HasColumnType("interval");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ShiftCode")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<TimeSpan>("StartTime")
-                        .HasColumnType("interval");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Shifts");
                 });
 #pragma warning restore 612, 618
         }
